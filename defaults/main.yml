@@ -8,27 +8,10 @@ conda_code_link_dir: ".condaenvs"
 
 conda_code_auto_activate: false
 
-conda_code_envs:
-- name: abinit
-  packages:
-  - abinit=9.4.0
-- name: cp2k
-  packages:
-  - cp2k=8.1.0=py38_openmpi_0
+conda_code_test_cpus: 2
 
-# these are required for creating aiida codes
+conda_code_abinit_version: "9.4.0"
+conda_code_abinit_build: null
 
-abinit_executables:
-- name: abinit
-  folder: "{{ conda_code_parent_dir }}/{{ conda_code_link_dir }}/envs/abinit/bin"
-  plugin: abinit
-  version: "9.4.0"
-  prepend_text: "{{ conda_code_parent_dir }}/{{ conda_code_link_dir }}/bin/conda activate abinit"
-
-cp2k_executables:
-- name: cp2k
-  executable: cp2k.psmp
-  folder: "{{ conda_code_parent_dir }}/{{ conda_code_link_dir }}/envs/abinit/bin"
-  plugin: cp2k
-  version: "8.1.0"
-  prepend_text: "{{ conda_code_parent_dir }}/{{ conda_code_link_dir }}/bin/conda activate cp2k"
+conda_code_cp2k_version: "8.1.0"
+conda_code_cp2k_build: "py38_openmpi_0"

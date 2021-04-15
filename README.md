@@ -89,10 +89,4 @@ Please direct inquiries regarding Quantum Mobile and associated ansible roles to
 
 ## Development Notes
 
-Disable Conda from being root Python:
-
-```bash
-conda config --set auto_activate_base false
-```
-
-conda clean --all
+TODO: change version of package in existing env

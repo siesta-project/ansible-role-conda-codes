@@ -1,5 +1,3 @@
-allow_duplicates: false
-
 galaxy_info:
   role_name: conda-codes
   author: "MARVEL NCCR"

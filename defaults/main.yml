@@ -1,1 +1,34 @@
 # in this file add variables to be used in the tasks
+
+conda_code_miniconda_ver: "4.9.2"
+conda_code_python_version: "3.8"
+
+conda_code_parent_dir: "${HOME}/.local"
+conda_code_link_dir: ".condaenvs"
+
+conda_code_auto_activate: false
+
+conda_code_envs:
+- name: abinit
+  packages:
+  - abinit=9.4.0
+- name: cp2k
+  packages:
+  - cp2k=8.1.0=py38_openmpi_0
+
+# these are required for creating aiida codes
+
+abinit_executables:
+- name: abinit
+  folder: "{{ conda_code_parent_dir }}/{{ conda_code_link_dir }}/envs/abinit/bin"
+  plugin: abinit
+  version: "9.4.0"
+  prepend_text: "{{ conda_code_parent_dir }}/{{ conda_code_link_dir }}/bin/conda activate abinit"
+
+cp2k_executables:
+- name: cp2k
+  executable: cp2k.psmp
+  folder: "{{ conda_code_parent_dir }}/{{ conda_code_link_dir }}/envs/abinit/bin"
+  plugin: cp2k
+  version: "8.1.0"
+  prepend_text: "{{ conda_code_parent_dir }}/{{ conda_code_link_dir }}/bin/conda activate cp2k"

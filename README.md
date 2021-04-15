@@ -6,6 +6,20 @@
 
 An Ansible role that installs computational codes from Conda
 
+## Codes
+
+| Code | Recipe | MPI |
+| ---- | ------ | --- |
+| abinit | [![recipe][abinit-badge]][abinit-link] | mpich |
+| cp2k | [![recipe][cp2k-badge]][cp2k-link] | openmpi |
+
+
+[abinit-badge]: https://img.shields.io/badge/recipe-abinit-green.svg
+[abinit-link]: https://github.com/conda-forge/abinit-feedstock
+[cp2k-badge]: https://img.shields.io/badge/recipe-cp2k-green.svg
+[cp2k-link]: https://github.com/conda-forge/cp2k-feedstock
+
+
 ## Installation
 
 `ansible-galaxy install marvel-nccr.conda-codes`
@@ -71,3 +85,14 @@ MIT
 ## Contact
 
 Please direct inquiries regarding Quantum Mobile and associated ansible roles to the [AiiDA mailinglist](http://www.aiida.net/mailing-list/).
+
+
+## Development Notes
+
+Disable Conda from being root Python:
+
+```bash
+conda config --set auto_activate_base false
+```
+
+conda clean --all

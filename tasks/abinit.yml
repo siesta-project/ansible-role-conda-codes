@@ -14,7 +14,10 @@
 # TODO: this doesn not work
 # - name: Run abinit test
 #   # shell: bash -lc "{{ conda_code_exec }} activate {{ env.name }}; mpirun -np {{ conda_code_test_cpus }} '{{ conda_code_parent_dir }}/{{ conda_code_link_dir }}/envs/{{ env.name }}/bin/abinit' run.in"
-#   shell: eval $(/root/.local/.condaenvs/bin/conda shell.bash hook); source /root/.local/Miniconda3-py38_4.9.2-Linux-x86_64/etc/profile.d/conda.sh; /root/.local/.condaenvs/bin/conda activate abinit; mpirun -np 2 '${HOME}/.local/.condaenvs/envs/abinit/bin/abinit' run.in
+#   shell: >
+#      eval $(/root/.local/.condaenvs/bin/conda shell.bash hook);
+#      source /root/.local/Miniconda3-py38_4.9.2-Linux-x86_64/etc/profile.d/conda.sh;
+#      /root/.local/.condaenvs/bin/conda activate abinit; mpirun -np 2 '${HOME}/.local/.condaenvs/envs/abinit/bin/abinit' run.in
 #   args:
 #     executable: /bin/bash
 #     chdir: /tmp/abinit_test/

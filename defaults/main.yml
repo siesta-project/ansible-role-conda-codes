@@ -11,7 +11,7 @@ conda_code_auto_activate: false
 conda_code_test_cpus: 2
 
 conda_code_abinit_version: "9.4.0"
-conda_code_abinit_build: null
+conda_code_abinit_build:
 
 conda_code_cp2k_version: "8.1.0"
 conda_code_cp2k_build: "py38_openmpi_0"

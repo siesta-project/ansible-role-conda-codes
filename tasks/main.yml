@@ -33,26 +33,6 @@
   command: "{{ conda_code_exec }} config --prepend channels conda-forge"
   changed_when: false
 
-- name: create cp2k environment
-  tags: [cp2k]
-  include_tasks: cp2k.yml
-  vars:
-    env:
-      name: cp2k
-      version: "{{ conda_code_cp2k_version }}"
-      packages:
-      - "cp2k={{ conda_code_cp2k_version }}{{ '=' + conda_code_cp2k_build if conda_code_cp2k_build else '' }}"
-
-- name: create abinit environment
-  tags: [abinit]
-  include_tasks: abinit.yml
-  vars:
-    env:
-      name: abinit
-      version: "{{ conda_code_abinit_version }}"
-      packages:
-      - "abinit={{ conda_code_abinit_version }}{{ '=' + conda_code_abinit_build if conda_code_abinit_build else '' }}"
-
 - name: Clean Conda
   command: "{{ conda_code_exec }} clean -tipsyq"
   changed_when: false
